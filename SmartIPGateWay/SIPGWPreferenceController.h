@@ -16,6 +16,7 @@
 - (IBAction)autoConnect:(id)sender;
 - (IBAction)notifyUser:(id)sender;
 @property (weak) IBOutlet NSButton *btstat;
+@property (strong) IBOutlet NSButton *btDockIcon;
 @property (weak) IBOutlet NSButton *btconnect;
 @property (weak) IBOutlet NSButton *btnotify;
 @property SIPGWAppDelegate *appdelegate;

@@ -59,6 +59,8 @@
 -(IBAction)showPreference:(id)sender;
 -(void)showMenuBar;
 -(void)hideMenuBar;
+-(void)showDockIcon;
+-(void)hideDockIcon;
 -(IBAction)menuConnectFree:(id)sender;
 -(IBAction)menuConnectFee:(id)sender;
 -(IBAction)menuDisconnect:(id)sender;

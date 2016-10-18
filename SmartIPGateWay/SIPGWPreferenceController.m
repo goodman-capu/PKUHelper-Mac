@@ -34,6 +34,7 @@
     [super windowDidLoad];
     NSUserDefaults *def=[NSUserDefaults standardUserDefaults];
     [[self btconnect] setState:[def boolForKey:@"autoConnect"]];
+    [[self btDockIcon] setState:[def boolForKey:@"showDockIcon"]];
     [[self btnotify] setState:[def boolForKey:@"notifyUser"]];
     [[self btstat] setState:[def boolForKey:@"showStatBarItem"]];
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
@@ -45,6 +46,15 @@
         [appdelegate showMenuBar];
     }else{
         [appdelegate hideMenuBar];
+    }
+}
+
+- (IBAction)showDockIcon:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:[(NSButton*)sender state]] forKey:@"showDockIcon"];
+    if ((BOOL)[(NSButton*)sender state]) {
+        [appdelegate showDockIcon];
+    }else{
+        [appdelegate hideDockIcon];
     }
 }
 

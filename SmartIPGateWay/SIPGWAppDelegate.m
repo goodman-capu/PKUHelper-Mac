@@ -25,10 +25,11 @@
     NSMutableDictionary *defaults=[NSMutableDictionary dictionary];
     [defaults setValue:@"" forKey:@"uid"];
     [defaults setValue:@"" forKey:@"pass"];
-    [defaults setValue:[NSNumber numberWithBool:NO] forKey:@"isFee"];
-    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"showStatBarItem"];
-    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"autoConnect"];
-    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"notifyUser"];
+    [defaults setValue:@(NO) forKey:@"isFee"];
+    [defaults setValue:@(YES) forKey:@"showStatBarItem"];
+    [defaults setValue:@(NO) forKey:@"showDockIcon"];
+    [defaults setValue:@(YES) forKey:@"autoConnect"];
+    [defaults setValue:@(YES) forKey:@"notifyUser"];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -42,7 +43,13 @@
     [self setUid:[[NSUserDefaults standardUserDefaults] objectForKey:@"uid"]];
     [self setPass:[[NSUserDefaults standardUserDefaults] objectForKey:@"pass"]];
     [self setSelectedIndex:[[NSUserDefaults standardUserDefaults] boolForKey:@"isFee"]?1:0];
-    statString=@"无网络连接";
+    statString=@"尚未联网";
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"showDockIcon"]) {
+        [self showDockIcon];
+    } else {
+        [self hideDockIcon];
+        [self showMainWindow:nil];
+    }
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"showStatBarItem"]) {
         [self showMenuBar];
     }
@@ -55,7 +62,7 @@
     //[NSApp setDelegate:self];
 }
 -(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender{
-    if (NO&&isFeeConnected) {
+    if (isFeeConnected) {
         [self disconnect:nil];
         return NSTerminateLater;
     }else{
@@ -79,6 +86,7 @@
         return NO;
     }else{
         [[self window] makeKeyAndOrderFront:self];
+        [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
         return YES;
     }
 }
@@ -92,8 +100,24 @@
     [statusItem setTitle:statString];
 }
 -(void)hideMenuBar{
-    [[NSStatusBar systemStatusBar] removeStatusItem:statusItem];
+    if (statusItem) {
+        [[NSStatusBar systemStatusBar] removeStatusItem:statusItem];
+    }
 }
+
+-(void)showDockIcon {
+    ProcessSerialNumber psn = { 0, kCurrentProcess };
+    TransformProcessType(&psn, kProcessTransformToForegroundApplication);
+}
+
+-(void)hideDockIcon {
+    ProcessSerialNumber psn = { 0, kCurrentProcess };
+    TransformProcessType(&psn, kProcessTransformToUIElementApplication);
+}
+- (IBAction)menuPreference:(id)sender {
+    
+}
+
 -(IBAction)menuConnectFree:(id)sender{
     [self setSelectedIndex:0];
     [self connect:nil];
@@ -180,23 +204,20 @@
         [[infoPanel labelCurrent]setStringValue:[result objectForKey:@"访问范围"]];
         [[infoPanel labelType]setStringValue:[result objectForKey:@"包月状态"]];
         [[infoPanel connections]setIntegerValue:[[(NSString*)[result objectForKey:@"当前连接"] substringToIndex:1] integerValue]];
-        if(![[result objectForKey:@"包月状态"] isEqual:@"未包月"])
-        if([result objectForKey:@"包月累计时长"]) [[infoPanel labeltime]setStringValue:[result objectForKey:@"包月累计时长"]];
-        else [[infoPanel labeltime]setStringValue:@""];
         BOOL displayTimeInfo=YES;
         NSString *feeStatus;
-        if([[result objectForKey:@"包月状态"] isEqual:@"30元140小时包月"]){
-            [[infoPanel progressMax]setStringValue:@"140 h"];
-            [[infoPanel progressbar]setMaxValue:140];
-            feeStatus=@"140小时";
-        }else if([[result objectForKey:@"包月状态"] isEqual:@"50元220小时包月"]){
-            [[infoPanel progressMax]setStringValue:@"220 h"];
-            [[infoPanel progressbar]setMaxValue:220];
-            feeStatus=@"220小时";
-        }else if([[result objectForKey:@"包月状态"] isEqual:@"0元60小时包月"]||[[result objectForKey:@"包月状态"] isEqual:@"免费包月"]){
-            [[infoPanel progressMax]setStringValue:@"60 h"];
-            [[infoPanel progressbar]setMaxValue:60];
-            feeStatus=@"60小时";
+        if([[result objectForKey:@"包月状态"] isEqual:@"30元200小时包月"]){
+            [[infoPanel progressMax]setStringValue:@"200 h"];
+            [[infoPanel progressbar]setMaxValue:200];
+            feeStatus=@"200小时";
+        }else if([[result objectForKey:@"包月状态"] isEqual:@"50元280小时包月"]){
+            [[infoPanel progressMax]setStringValue:@"280 h"];
+            [[infoPanel progressbar]setMaxValue:280];
+            feeStatus=@"280小时";
+        }else if([[result objectForKey:@"包月状态"] isEqual:@"0元120小时包月"]||[[result objectForKey:@"包月状态"] isEqual:@"免费包月"]){
+            [[infoPanel progressMax]setStringValue:@"120 h"];
+            [[infoPanel progressbar]setMaxValue:120];
+            feeStatus=@"120小时";
         }else{
             [[infoPanel progressbar]setHidden:YES];
             [[infoPanel progressMax]setHidden:YES];
@@ -207,8 +228,8 @@
             [[infoPanel dateProgress] setHidden:YES];
             [[infoPanel dateTip] setHidden:YES];
             displayTimeInfo=NO;
-            if([[result objectForKey:@"包月状态"] isEqual:@"0元60小时包月"]||[[result objectForKey:@"包月状态"] isEqual:@"免费包月"]){
-                feeStatus=@"60小时";
+            if([[result objectForKey:@"包月状态"] isEqual:@"0元120小时包月"]||[[result objectForKey:@"包月状态"] isEqual:@"免费包月"]){
+                feeStatus=@"120小时";
             }else{
                 feeStatus=@"∞小时";
             }
@@ -369,18 +390,17 @@
 
 
 #pragma tabview
-//330 294
-//696 420
-//366 126
+//330 280
+//600 400
 -(void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem{
     NSRect current=[[self window] frame];
-    if ([[tabViewItem label] isEqual:@"校园网通知"]) {
-        [[self window] setFrame:NSMakeRect(current.origin.x, current.origin.y-126, current.size.width+366, current.size.height+126) display:YES animate:YES];
+    if ([tabViewItem.identifier isEqualToString:@"2"]) {
+        [[self window] setFrame:NSMakeRect(current.origin.x - 135, current.origin.y-120, current.size.width+270, current.size.height+120) display:YES animate:YES];
         if (![notis count]) {
             [self refreshData:nil];
         }
     }else{
-        [[self window] setFrame:NSMakeRect(current.origin.x, current.origin.y+126, current.size.width-366, current.size.height-126) display:YES animate:YES];
+        [[self window] setFrame:NSMakeRect(current.origin.x + 135, current.origin.y+120, current.size.width-270, current.size.height-120) display:YES animate:YES];
     }
 }
 #pragma end
@@ -411,6 +431,7 @@
 }
 -(IBAction)showMainWindow:(id)sender{
     [[self window] makeKeyAndOrderFront:self];
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
@@ -462,7 +483,7 @@
 -(void)testOver{
     switch ([[self netStatLI] integerValue]) {
         case 0:
-            statString=@"无网络连接";
+            statString=@"尚未联网";
             break;
         case 1:
             statString=@"校内地址";

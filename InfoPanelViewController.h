@@ -19,7 +19,6 @@
 @property (weak) IBOutlet NSTextField *progressMax;
 @property (weak) IBOutlet NSTextField *progressMin;
 @property (weak) IBOutlet NSTextField *progressTip;
-@property (weak) IBOutlet NSTextField *labeltime;
 - (IBAction)closeInfoPane:(id)sender;
 - (IBAction)showMoreInfo:(id)sender;
 @property (weak) IBOutlet NSLevelIndicator *connections;

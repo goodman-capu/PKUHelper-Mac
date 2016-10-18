@@ -27,7 +27,7 @@
     [responseData appendData:data];
 }
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    NSString *result=[[NSString alloc]initWithData:responseData encoding:-2147482063];
+    NSString *result=[[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
     if (!notis) {
         notis=[[NSMutableArray alloc]init];
     }
@@ -35,15 +35,15 @@
     NSRange begin=[result rangeOfString:@"<!--AnnBegin-->"];
     NSRange end=[result rangeOfString:@"<!--AnnEnd-->"];
     NSString *notisraw=[result substringWithRange:NSMakeRange(begin.location+begin.length, end.location-(begin.location+begin.length))];
-    //<li class="style"> <a href="/announce/tz20130627142920.jsp">校园网紧急通知</a>（2013.06.27）</li>
-    NSRegularExpression *reg=[[NSRegularExpression alloc]initWithPattern:@"(<li class=\"style\"> <a href=\")(.+?)(\">)(.+?)(</a>（)(.+?)(）</li>)" options:0 error:nil];
+    NSRegularExpression *reg=[[NSRegularExpression alloc]initWithPattern:@"(<li><a href=\")(.+?)(\">)(.+?)(<span class=\"s-dt\">)(.+?)(</span></a></li>)" options:0 error:nil];
     NSArray *matches=[reg matchesInString:notisraw options:0 range:NSMakeRange(0, [notisraw length])];
     for (int i=0; i<[matches count]; i++) {
         NSTextCheckingResult *r=[matches objectAtIndex:i];
         NSMutableDictionary *dict=[NSMutableDictionary dictionary];
         [dict setObject:[notisraw substringWithRange:[r rangeAtIndex:2]] forKey:@"href"];
         [dict setObject:[notisraw substringWithRange:[r rangeAtIndex:4]] forKey:@"title"];
-        [dict setObject:[notisraw substringWithRange:[r rangeAtIndex:6]] forKey:@"time"];
+        NSString *time = [notisraw substringWithRange:[r rangeAtIndex:6]];
+        [dict setObject:[time substringWithRange:NSMakeRange(1, time.length - 2)] forKey:@"time"];
         [notis addObject:dict];
         dict=nil;
     }
