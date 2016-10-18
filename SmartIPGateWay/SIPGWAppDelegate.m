@@ -257,7 +257,7 @@
         }
         [self setIpStatus:[NSString stringWithFormat:@"网关已连接：%@",isFeeConnected?@"收费地址":@"免费地址"]];
         if(![feeStatus isEqualToString:@"未包月"]){
-            feeStatus=[NSString stringWithFormat:@"%0.1f小时/%@",[[infoPanel progressbar] doubleValue],feeStatus];
+            feeStatus=[NSString stringWithFormat:@"%.1f / %@",[[infoPanel progressbar] doubleValue],feeStatus];
         }
         [self setIpStatus2:[NSString stringWithFormat:@"包月状态：%@",feeStatus]];
         [self setUsername:[NSString stringWithFormat:@"用户名：%@",[result objectForKey:@"用户名"]]];
