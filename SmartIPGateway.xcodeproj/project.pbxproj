@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B0FEBB318508F73007FC4EF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0FEBB218508F73007FC4EF /* Cocoa.framework */; };
+		8B0FEBBD18508F74007FC4EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B0FEBBB18508F74007FC4EF /* InfoPlist.strings */; };
+		8B0FEBBF18508F74007FC4EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0FEBBE18508F74007FC4EF /* main.m */; };
+		8B0FEBC318508F74007FC4EF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8B0FEBC118508F74007FC4EF /* Credits.rtf */; };
+		8B0FEBC618508F74007FC4EF /* SIPGWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0FEBC518508F74007FC4EF /* SIPGWAppDelegate.m */; };
+		8B0FEBC918508F74007FC4EF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B0FEBC718508F74007FC4EF /* MainMenu.xib */; };
+		8B0FEBCB18508F74007FC4EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B0FEBCA18508F74007FC4EF /* Images.xcassets */; };
+		8B0FEBD218508F74007FC4EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0FEBD118508F74007FC4EF /* XCTest.framework */; };
+		8B0FEBD318508F74007FC4EF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0FEBB218508F73007FC4EF /* Cocoa.framework */; };
+		8B0FEBDB18508F74007FC4EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B0FEBD918508F74007FC4EF /* InfoPlist.strings */; };
+		8B0FEBDD18508F74007FC4EF /* SmartIPGateWayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0FEBDC18508F74007FC4EF /* SmartIPGateWayTests.m */; };
+		8B478C47185176BA00980ED3 /* SIPGWPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B478C45185176BA00980ED3 /* SIPGWPreferenceController.m */; };
+		8B478C48185176BA00980ED3 /* SIPGWPreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B478C46185176BA00980ED3 /* SIPGWPreferenceController.xib */; };
+		8B478C4E1851AB9A00980ED3 /* icon_512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B478C4D1851AB9A00980ED3 /* icon_512@2x.png */; };
+		8B478C511851B70400980ED3 /* SIPGWNotificationsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B478C501851B70400980ED3 /* SIPGWNotificationsFetcher.m */; };
+		8B478C531851C60300980ED3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B478C521851C60300980ED3 /* WebKit.framework */; };
+		8BA6019F1855B490004AD05E /* SIPGWNetStatGeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA6019E1855B490004AD05E /* SIPGWNetStatGeter.m */; };
+		8BDE447E1850CDF8000D6085 /* SIPGWActionPerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE447D1850CDF8000D6085 /* SIPGWActionPerformer.m */; };
+		8BDE44C51850FAD5000D6085 /* InfoPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE44C31850FAD5000D6085 /* InfoPanelViewController.m */; };
+		8BDE44C61850FAD5000D6085 /* InfoPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BDE44C41850FAD5000D6085 /* InfoPanelViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B0FEBD418508F74007FC4EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B0FEBA718508F73007FC4EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B0FEBAE18508F73007FC4EF;
+			remoteInfo = SmartIPGateWay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8B0FEBAF18508F73007FC4EF /* SmartIPGateWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartIPGateWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B0FEBB218508F73007FC4EF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		8B0FEBB518508F74007FC4EF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8B0FEBB618508F74007FC4EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8B0FEBB718508F74007FC4EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8B0FEBBA18508F74007FC4EF /* SmartIPGateWay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartIPGateWay-Info.plist"; sourceTree = "<group>"; };
+		8B0FEBBC18508F74007FC4EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8B0FEBBE18508F74007FC4EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8B0FEBC018508F74007FC4EF /* SmartIPGateWay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartIPGateWay-Prefix.pch"; sourceTree = "<group>"; };
+		8B0FEBC218508F74007FC4EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		8B0FEBC418508F74007FC4EF /* SIPGWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIPGWAppDelegate.h; sourceTree = "<group>"; };
+		8B0FEBC518508F74007FC4EF /* SIPGWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIPGWAppDelegate.m; sourceTree = "<group>"; };
+		8B0FEBC818508F74007FC4EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8B0FEBCA18508F74007FC4EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8B0FEBD018508F74007FC4EF /* SmartIPGateWayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartIPGateWayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B0FEBD118508F74007FC4EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8B0FEBD818508F74007FC4EF /* SmartIPGateWayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartIPGateWayTests-Info.plist"; sourceTree = "<group>"; };
+		8B0FEBDA18508F74007FC4EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8B0FEBDC18508F74007FC4EF /* SmartIPGateWayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartIPGateWayTests.m; sourceTree = "<group>"; };
+		8B1B95001BE31F1200C009FE /* SmartIPGateWay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SmartIPGateWay.entitlements; sourceTree = "<group>"; };
+		8B478C44185176BA00980ED3 /* SIPGWPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIPGWPreferenceController.h; sourceTree = "<group>"; };
+		8B478C45185176BA00980ED3 /* SIPGWPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIPGWPreferenceController.m; sourceTree = "<group>"; };
+		8B478C46185176BA00980ED3 /* SIPGWPreferenceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SIPGWPreferenceController.xib; sourceTree = "<group>"; };
+		8B478C49185199A900980ED3 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		8B478C4D1851AB9A00980ED3 /* icon_512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_512@2x.png"; sourceTree = "<group>"; };
+		8B478C4F1851B70400980ED3 /* SIPGWNotificationsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIPGWNotificationsFetcher.h; sourceTree = "<group>"; };
+		8B478C501851B70400980ED3 /* SIPGWNotificationsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIPGWNotificationsFetcher.m; sourceTree = "<group>"; };
+		8B478C521851C60300980ED3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8BA6019D1855B490004AD05E /* SIPGWNetStatGeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIPGWNetStatGeter.h; sourceTree = "<group>"; };
+		8BA6019E1855B490004AD05E /* SIPGWNetStatGeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIPGWNetStatGeter.m; sourceTree = "<group>"; };
+		8BAB66EB187A540900963B6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		8BAB66EC187A540900963B6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		8BAB66ED187A540900963B6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		8BAB66EE187A540900963B6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		8BDE447C1850CDF8000D6085 /* SIPGWActionPerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIPGWActionPerformer.h; sourceTree = "<group>"; };
+		8BDE447D1850CDF8000D6085 /* SIPGWActionPerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIPGWActionPerformer.m; sourceTree = "<group>"; };
+		8BDE44C21850FAD5000D6085 /* InfoPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPanelViewController.h; sourceTree = "<group>"; };
+		8BDE44C31850FAD5000D6085 /* InfoPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPanelViewController.m; sourceTree = "<group>"; };
+		8BDE44C41850FAD5000D6085 /* InfoPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoPanelViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B0FEBAC18508F73007FC4EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B478C531851C60300980ED3 /* WebKit.framework in Frameworks */,
+				8B0FEBB318508F73007FC4EF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B0FEBCD18508F74007FC4EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0FEBD318508F74007FC4EF /* Cocoa.framework in Frameworks */,
+				8B0FEBD218508F74007FC4EF /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B0FEBA618508F73007FC4EF = {
+			isa = PBXGroup;
+			children = (
+				8BDE44C21850FAD5000D6085 /* InfoPanelViewController.h */,
+				8BDE44C31850FAD5000D6085 /* InfoPanelViewController.m */,
+				8BDE44C41850FAD5000D6085 /* InfoPanelViewController.xib */,
+				8B0FEBB818508F74007FC4EF /* SmartIPGateWay */,
+				8B0FEBD618508F74007FC4EF /* SmartIPGateWayTests */,
+				8B0FEBB118508F73007FC4EF /* Frameworks */,
+				8B0FEBB018508F73007FC4EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B0FEBB018508F73007FC4EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B0FEBAF18508F73007FC4EF /* SmartIPGateWay.app */,
+				8B0FEBD018508F74007FC4EF /* SmartIPGateWayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B0FEBB118508F73007FC4EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B478C521851C60300980ED3 /* WebKit.framework */,
+				8B478C49185199A900980ED3 /* IOKit.framework */,
+				8B0FEBB218508F73007FC4EF /* Cocoa.framework */,
+				8B0FEBD118508F74007FC4EF /* XCTest.framework */,
+				8B0FEBB418508F74007FC4EF /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B0FEBB418508F74007FC4EF /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B0FEBB518508F74007FC4EF /* AppKit.framework */,
+				8B0FEBB618508F74007FC4EF /* CoreData.framework */,
+				8B0FEBB718508F74007FC4EF /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		8B0FEBB818508F74007FC4EF /* SmartIPGateWay */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B95001BE31F1200C009FE /* SmartIPGateWay.entitlements */,
+				8B0FEBC418508F74007FC4EF /* SIPGWAppDelegate.h */,
+				8B0FEBC518508F74007FC4EF /* SIPGWAppDelegate.m */,
+				8BA6019D1855B490004AD05E /* SIPGWNetStatGeter.h */,
+				8BA6019E1855B490004AD05E /* SIPGWNetStatGeter.m */,
+				8B478C4F1851B70400980ED3 /* SIPGWNotificationsFetcher.h */,
+				8B478C501851B70400980ED3 /* SIPGWNotificationsFetcher.m */,
+				8B478C44185176BA00980ED3 /* SIPGWPreferenceController.h */,
+				8B478C45185176BA00980ED3 /* SIPGWPreferenceController.m */,
+				8B478C46185176BA00980ED3 /* SIPGWPreferenceController.xib */,
+				8B0FEBC718508F74007FC4EF /* MainMenu.xib */,
+				8BDE447C1850CDF8000D6085 /* SIPGWActionPerformer.h */,
+				8BDE447D1850CDF8000D6085 /* SIPGWActionPerformer.m */,
+				8B0FEBCA18508F74007FC4EF /* Images.xcassets */,
+				8B0FEBB918508F74007FC4EF /* Supporting Files */,
+			);
+			path = SmartIPGateWay;
+			sourceTree = "<group>";
+		};
+		8B0FEBB918508F74007FC4EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B0FEBBA18508F74007FC4EF /* SmartIPGateWay-Info.plist */,
+				8B478C4D1851AB9A00980ED3 /* icon_512@2x.png */,
+				8B0FEBBB18508F74007FC4EF /* InfoPlist.strings */,
+				8B0FEBBE18508F74007FC4EF /* main.m */,
+				8B0FEBC018508F74007FC4EF /* SmartIPGateWay-Prefix.pch */,
+				8B0FEBC118508F74007FC4EF /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B0FEBD618508F74007FC4EF /* SmartIPGateWayTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B0FEBDC18508F74007FC4EF /* SmartIPGateWayTests.m */,
+				8B0FEBD718508F74007FC4EF /* Supporting Files */,
+			);
+			path = SmartIPGateWayTests;
+			sourceTree = "<group>";
+		};
+		8B0FEBD718508F74007FC4EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B0FEBD818508F74007FC4EF /* SmartIPGateWayTests-Info.plist */,
+				8B0FEBD918508F74007FC4EF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B0FEBAE18508F73007FC4EF /* SmartIPGateWay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B0FEBE018508F74007FC4EF /* Build configuration list for PBXNativeTarget "SmartIPGateWay" */;
+			buildPhases = (
+				8B0FEBAB18508F73007FC4EF /* Sources */,
+				8B0FEBAC18508F73007FC4EF /* Frameworks */,
+				8B0FEBAD18508F73007FC4EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartIPGateWay;
+			productName = SmartIPGateWay;
+			productReference = 8B0FEBAF18508F73007FC4EF /* SmartIPGateWay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B0FEBCF18508F74007FC4EF /* SmartIPGateWayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B0FEBE318508F74007FC4EF /* Build configuration list for PBXNativeTarget "SmartIPGateWayTests" */;
+			buildPhases = (
+				8B0FEBCC18508F74007FC4EF /* Sources */,
+				8B0FEBCD18508F74007FC4EF /* Frameworks */,
+				8B0FEBCE18508F74007FC4EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B0FEBD518508F74007FC4EF /* PBXTargetDependency */,
+			);
+			name = SmartIPGateWayTests;
+			productName = SmartIPGateWayTests;
+			productReference = 8B0FEBD018508F74007FC4EF /* SmartIPGateWayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B0FEBA718508F73007FC4EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SIPGW;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "熊典";
+				TargetAttributes = {
+					8B0FEBAE18508F73007FC4EF = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					8B0FEBCF18508F74007FC4EF = {
+						TestTargetID = 8B0FEBAE18508F73007FC4EF;
+					};
+				};
+			};
+			buildConfigurationList = 8B0FEBAA18508F73007FC4EF /* Build configuration list for PBXProject "SmartIPGateway" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 8B0FEBA618508F73007FC4EF;
+			productRefGroup = 8B0FEBB018508F73007FC4EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B0FEBAE18508F73007FC4EF /* SmartIPGateWay */,
+				8B0FEBCF18508F74007FC4EF /* SmartIPGateWayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B0FEBAD18508F73007FC4EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0FEBBD18508F74007FC4EF /* InfoPlist.strings in Resources */,
+				8B478C48185176BA00980ED3 /* SIPGWPreferenceController.xib in Resources */,
+				8B0FEBCB18508F74007FC4EF /* Images.xcassets in Resources */,
+				8BDE44C61850FAD5000D6085 /* InfoPanelViewController.xib in Resources */,
+				8B478C4E1851AB9A00980ED3 /* icon_512@2x.png in Resources */,
+				8B0FEBC318508F74007FC4EF /* Credits.rtf in Resources */,
+				8B0FEBC918508F74007FC4EF /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B0FEBCE18508F74007FC4EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0FEBDB18508F74007FC4EF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B0FEBAB18508F73007FC4EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDE447E1850CDF8000D6085 /* SIPGWActionPerformer.m in Sources */,
+				8B0FEBBF18508F74007FC4EF /* main.m in Sources */,
+				8B478C47185176BA00980ED3 /* SIPGWPreferenceController.m in Sources */,
+				8B0FEBC618508F74007FC4EF /* SIPGWAppDelegate.m in Sources */,
+				8BDE44C51850FAD5000D6085 /* InfoPanelViewController.m in Sources */,
+				8BA6019F1855B490004AD05E /* SIPGWNetStatGeter.m in Sources */,
+				8B478C511851B70400980ED3 /* SIPGWNotificationsFetcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B0FEBCC18508F74007FC4EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0FEBDD18508F74007FC4EF /* SmartIPGateWayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B0FEBD518508F74007FC4EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B0FEBAE18508F73007FC4EF /* SmartIPGateWay */;
+			targetProxy = 8B0FEBD418508F74007FC4EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B0FEBBB18508F74007FC4EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B0FEBBC18508F74007FC4EF /* en */,
+				8BAB66EC187A540900963B6E /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8B0FEBC118508F74007FC4EF /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B0FEBC218508F74007FC4EF /* en */,
+				8BAB66ED187A540900963B6E /* zh-Hans */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		8B0FEBC718508F74007FC4EF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B0FEBC818508F74007FC4EF /* Base */,
+				8BAB66EB187A540900963B6E /* zh-Hans */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		8B0FEBD918508F74007FC4EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B0FEBDA18508F74007FC4EF /* en */,
+				8BAB66EE187A540900963B6E /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B0FEBDE18508F74007FC4EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8B0FEBDF18508F74007FC4EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8B0FEBE118508F74007FC4EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartIPGateWay/SmartIPGateWay.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SmartIPGateWay/SmartIPGateWay-Prefix.pch";
+				INFOPLIST_FILE = "SmartIPGateWay/SmartIPGateWay-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiongdianpku.SmartIPGateway;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8B0FEBE218508F74007FC4EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartIPGateWay/SmartIPGateWay.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SmartIPGateWay/SmartIPGateWay-Prefix.pch";
+				INFOPLIST_FILE = "SmartIPGateWay/SmartIPGateWay-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiongdianpku.SmartIPGateway;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8B0FEBE418508F74007FC4EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SmartIPGateWay.app/Contents/MacOS/SmartIPGateWay";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SmartIPGateWay/SmartIPGateWay-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SmartIPGateWayTests/SmartIPGateWayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8B0FEBE518508F74007FC4EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SmartIPGateWay.app/Contents/MacOS/SmartIPGateWay";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SmartIPGateWay/SmartIPGateWay-Prefix.pch";
+				INFOPLIST_FILE = "SmartIPGateWayTests/SmartIPGateWayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B0FEBAA18508F73007FC4EF /* Build configuration list for PBXProject "SmartIPGateway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B0FEBDE18508F74007FC4EF /* Debug */,
+				8B0FEBDF18508F74007FC4EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B0FEBE018508F74007FC4EF /* Build configuration list for PBXNativeTarget "SmartIPGateWay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B0FEBE118508F74007FC4EF /* Debug */,
+				8B0FEBE218508F74007FC4EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B0FEBE318508F74007FC4EF /* Build configuration list for PBXNativeTarget "SmartIPGateWayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B0FEBE418508F74007FC4EF /* Debug */,
+				8B0FEBE518508F74007FC4EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B0FEBA718508F73007FC4EF /* Project object */;
+}
